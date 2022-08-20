@@ -23,6 +23,5 @@ ENV DOCKER=true \
 COPY package.json .
 COPY --from=prod_dependencies /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
-COPY ./assets ./assets
 
 ENTRYPOINT ["node", "/app/dist/index.js"]
