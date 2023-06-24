@@ -36,9 +36,9 @@ jobs:
       - name: Deploy to Digital Ocean droplet via SSH action
         uses: appleboy/ssh-action@master
         with:
-          HOST: ${{ secrets.HOST }}
-          USERNAME: ${{ secrets.USERNAME }}
-          KEY: ${{ secrets.SSHKEY }}
+          HOST: ${{ secrets.DIGITALOCEAN_HOST }}
+          USERNAME: ${{ secrets.DIGITALOCEAN_USERNAME }}
+          KEY: ${{ secrets.DIGITALOCEAN_SSHKEY }}
           envs: IMAGE_NAME,REGISTRY,GITHUB_SHA
           script: |
             # Login to the Digital Ocean Registry
